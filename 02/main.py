@@ -21,5 +21,16 @@ def main():
 
 	print(f"Part 1: {safeCount}")
 
+	safeCount = 0
+
+	for levels in lines:
+		for a in range(len(levels)):
+			levelsTest = levels[:a] + levels[a+1:]
+			if checkReport(levelsTest):
+				safeCount += 1
+				break
+
+	print(f"Part 2: {safeCount}")
+
 if __name__ == "__main__":
 	main()
